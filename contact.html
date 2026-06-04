@@ -1,0 +1,238 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #1d4ed8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            margin: 12px 0;
+            color: #444;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media(max-width:768px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="my_profile_card.html" class="home-btn">
+            ← Back to Home
+        </a>
+
+        <h1>Contact Me</h1>
+
+        <p class="intro">
+            Thank you for visiting my portfolio. I am always open to learning opportunities,
+            internships, collaborations, and professional networking. Feel free to connect with me.
+        </p>
+
+        <div class="contact-grid">
+
+            <div class="card">
+                <h2>Contact Information</h2>
+
+                <ul>
+                    <li><strong>Name:</strong> Chinthapally Raghavendra</li>
+                    <li><strong>Phone:</strong> +91 6301886652</li>
+                    <li><strong>Email:</strong> chinthapallyraghvendra143@gmail.com</li>
+                    <li><strong>Location:</strong> Telangana, India</li>
+                </ul>
+
+                <br>
+
+                <h2>Professional Profiles</h2>
+
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/chinthapally-raghavendra-456581364/" target="_blank">
+                            LinkedIn Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Rocky-1729" target="_blank">
+                            GitHub Profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+
+                <h2>Send Me a Message</h2>
+
+                <form>
+
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="6" required></textarea>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <p class="footer-note">
+            Let's connect and build something amazing together.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+```
