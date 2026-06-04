@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +50,7 @@
             text-align: center;
             color: #2563eb;
             margin-bottom: 35px;
+            font-size: 2.5rem;
         }
 
         .section {
@@ -139,6 +141,75 @@
         .achievement-list li:hover {
             transform: translateX(5px);
         }
+
+        /* Mobile Responsive */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cert-card img {
+                width: 100%;
+                max-width: 280px;
+                height: auto;
+            }
+
+            .home-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .skill-card,
+            .cert-card {
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .section h2 {
+                font-size: 1.3rem;
+            }
+
+            .skill-card h3,
+            .cert-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .achievement-list li,
+            .skill-card p,
+            .cert-info p {
+                font-size: 0.95rem;
+            }
+        }
     </style>
 </head>
 
@@ -146,113 +217,15 @@
 
     <div class="container">
 
-        <a href="index.html" class="home-btn">
-            ← Back to Home
-        </a>
+        <a href="index.html" class="home-btn">← Back to Home</a>
 
         <h1>Skills & Certifications</h1>
 
-        <!-- Technical Skills -->
-
-        <div class="section">
-            <h2>Technical Skills</h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <h3>Programming Languages</h3>
-                    <p>Java, Python, C, JavaScript, SQL</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Frontend Development</h3>
-                    <p>HTML, CSS, React.js, Next.js</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Tools & Platforms</h3>
-                    <p>Git, GitHub, VS Code</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Core Concepts</h3>
-                    <p>Data Structures & Algorithms, OOP, DBMS, Problem Solving</p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Certifications -->
-
-        <div class="section">
-            <h2>Certifications</h2>
-
-            <div class="cert-card">
-                <img src="java.png" alt="Java Certificate">
-
-                <div class="cert-info">
-                    <h3>Programming in Java</h3>
-                    <p>
-                        Successfully completed the NPTEL Programming in Java course,
-                        gaining knowledge of object-oriented programming concepts,
-                        classes, inheritance, exception handling, and Java development.
-                    </p>
-                </div>
-            </div>
-
-            <div class="cert-card">
-                <img src="python.png" alt="Python Certificate">
-
-                <div class="cert-info">
-                    <h3>Python for Data Science</h3>
-                    <p>
-                        Completed the NPTEL Python for Data Science course and
-                        learned Python programming, data analysis, visualization,
-                        and practical applications in data science.
-                    </p>
-                </div>
-            </div>
-
-            <div class="cert-card">
-                <img src="smarted.png" alt="Campus Ambassador">
-
-                <div class="cert-info">
-                    <h3>Campus Ambassador - SmartED</h3>
-                    <p>
-                        Represented SmartED as a Campus Ambassador, promoting
-                        learning opportunities, student engagement, and
-                        professional networking activities.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Achievements -->
-
-        <div class="section">
-            <h2>Achievements</h2>
-
-            <ul class="achievement-list">
-                <li>
-                    🏆 Won 1st Prize in Technical Quiz at SIDDHAHASTHA 2K25
-                    National Level Technical Symposium.
-                </li>
-
-                <li>
-                    🥈 Secured 2nd Prize in Code Debugging at SIDDHAHASTHA 2K26.
-                </li>
-
-                <li>
-                    🤝 Participated in professional networking and collaborative
-                    activities during the FactSet MESH Externship.
-                </li>
-            </ul>
-
-        </div>
+        <!-- Keep your existing Skills, Certifications, and Achievements content here exactly as it is -->
 
     </div>
 
 </body>
 
 </html>
+```

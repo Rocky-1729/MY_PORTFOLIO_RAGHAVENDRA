@@ -50,13 +50,14 @@
             text-align: center;
             color: #2563eb;
             margin-bottom: 20px;
+            font-size: 2.5rem;
         }
 
         .intro {
             text-align: center;
             color: #555;
             margin-bottom: 30px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .contact-grid {
@@ -113,6 +114,7 @@
 
         input,
         textarea {
+            width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -142,12 +144,72 @@
             font-style: italic;
         }
 
-        @media(max-width:768px) {
+        /* Tablet */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
 
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
+            .card {
+                padding: 18px;
+            }
+
+            .home-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .intro {
+                font-size: 0.95rem;
+            }
+
+            .card li {
+                font-size: 0.95rem;
+                word-break: break-word;
+            }
+
+            input,
+            textarea,
+            button {
+                width: 100%;
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .intro {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -163,13 +225,15 @@
         <h1>Contact Me</h1>
 
         <p class="intro">
-            Thank you for visiting my portfolio. I am always open to learning opportunities,
-            internships, collaborations, and professional networking. Feel free to connect with me.
+            Thank you for visiting my portfolio. I am always open to learning
+            opportunities, internships, collaborations, and professional
+            networking. Feel free to connect with me.
         </p>
 
         <div class="contact-grid">
 
             <div class="card">
+
                 <h2>Contact Information</h2>
 
                 <ul>
@@ -181,7 +245,7 @@
 
                 <br>
 
-                <h2>Professional Profiles</h2>
+                <h2>Connect With Me</h2>
 
                 <ul>
                     <li>
@@ -195,7 +259,14 @@
                             GitHub Profile
                         </a>
                     </li>
+
+                    <li>
+                        <a href="mailto:chinthapallyraghvendra143@gmail.com">
+                            Email Me
+                        </a>
+                    </li>
                 </ul>
+
             </div>
 
             <div class="card">
