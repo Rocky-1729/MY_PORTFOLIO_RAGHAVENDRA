@@ -1,13 +1,20 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Experience & Projects</title>
+
+    <title>Experience & Projects</title>
+
 
     <style>
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -15,15 +22,31 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+
+        /* =========================
+           BODY
+        ========================= */
+
         body {
             background: linear-gradient(135deg, #0f172a, #1e293b);
+            min-height: 100vh;
             padding: 40px 20px;
         }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
 
         .container {
             max-width: 1100px;
             margin: auto;
         }
+
+
+        /* =========================
+           HOME BUTTON
+        ========================= */
 
         .home-btn {
             display: inline-block;
@@ -37,9 +60,16 @@
             transition: 0.3s;
         }
 
+
         .home-btn:hover {
             background: #1d4ed8;
+            transform: translateY(-2px);
         }
+
+
+        /* =========================
+           MAIN TITLE
+        ========================= */
 
         .main-title {
             text-align: center;
@@ -48,29 +78,66 @@
             font-size: 42px;
         }
 
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
         .section-title {
             color: #60a5fa;
             margin-bottom: 25px;
             font-size: 30px;
         }
 
+
+        /* =========================
+           EXPERIENCE CARD
+        ========================= */
+
         .card {
             background: white;
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
         }
+
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        .card h2 {
+
+        /* =========================
+           EXPERIENCE TWO COLUMN
+        ========================= */
+
+        .experience-card {
+            display: grid;
+
+            /*
+                Left = Experience details
+                Right = Certificate
+            */
+
+            grid-template-columns: 1fr 360px;
+
+            gap: 35px;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           EXPERIENCE CONTENT
+        ========================= */
+
+        .experience-content h2 {
             color: #2563eb;
             margin-bottom: 10px;
         }
+
 
         .duration {
             color: #666;
@@ -78,220 +145,772 @@
             font-weight: bold;
         }
 
-        .card ul {
+
+        .experience-content ul {
             padding-left: 20px;
         }
 
-        .card li {
+
+        .experience-content li {
             margin: 10px 0;
             line-height: 1.6;
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+
+        /* =========================
+           CERTIFICATE
+        ========================= */
+
+        .certificate {
+            text-align: center;
         }
 
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+
+        .certificate img {
+            width: 100%;
+            max-width: 360px;
+
+            /*
+                Keeps certificate area
+                consistent in size
+            */
+
+            height: 230px;
+
+            object-fit: contain;
+
+            background: #f8fafc;
+
+            border: 2px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            padding: 5px;
+
             transition: 0.3s;
         }
 
+
+        .certificate img:hover {
+            transform: scale(1.03);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           CERTIFICATE BUTTON
+        ========================= */
+
+        .certificate-btn {
+            display: inline-block;
+
+            margin-top: 12px;
+
+            padding: 9px 18px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .certificate-btn:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROJECT GRID
+        ========================= */
+
+        .project-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           PROJECT CARD
+        ========================= */
+
+        .project-card {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, 0.2);
+
+            transition: 0.3s;
+        }
+
+
         .project-card:hover {
+
             transform: translateY(-5px);
         }
 
+
         .project-card h2 {
+
             color: #2563eb;
+
             margin-bottom: 15px;
         }
+
 
         .project-card p {
+
             color: #555;
+
             line-height: 1.6;
+
             margin-bottom: 15px;
         }
 
+
         .project-card ul {
+
             padding-left: 20px;
         }
 
+
         .project-card li {
+
             margin: 8px 0;
+
             line-height: 1.5;
         }
 
-        /* Mobile Responsive */
+
+        /* =========================
+           PROJECT BUTTON
+        ========================= */
+
+        .project-btn {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 9px 18px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .project-btn:hover {
+
+            background: #1d4ed8;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
 
         @media (max-width: 768px) {
 
             body {
+
                 padding: 20px 10px;
             }
 
+
             .main-title {
+
                 font-size: 2rem;
+
                 margin-bottom: 25px;
             }
 
+
             .section-title {
+
                 font-size: 1.6rem;
             }
 
+
             .card,
             .project-card {
+
                 padding: 18px;
             }
 
+
             .card h2,
             .project-card h2 {
+
                 font-size: 1.2rem;
             }
+
 
             .card li,
             .project-card li,
             .project-card p {
+
                 font-size: 0.95rem;
             }
 
+
+            /*
+                EXPERIENCE CARD
+                becomes one column
+            */
+
+            .experience-card {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+
+            /*
+                Certificate appears
+                above experience details
+            */
+
+            .certificate {
+
+                order: -1;
+            }
+
+
+            .certificate img {
+
+                width: 100%;
+
+                max-width: 500px;
+
+                height: auto;
+            }
+
+
             .project-grid {
+
                 grid-template-columns: 1fr;
             }
 
+
             .home-btn {
+
                 padding: 10px 18px;
+
                 font-size: 0.9rem;
             }
+
         }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 480px) {
 
             .main-title {
+
                 font-size: 1.8rem;
             }
 
+
             .section-title {
+
                 font-size: 1.4rem;
             }
 
+
             .card,
             .project-card {
+
                 padding: 15px;
             }
 
+
             .duration {
+
                 font-size: 0.9rem;
             }
+
+
+            .certificate img {
+
+                max-width: 100%;
+
+                height: auto;
+            }
+
+
+            .certificate-btn {
+
+                font-size: 14px;
+
+                padding: 8px 14px;
+            }
+
         }
     </style>
+
 </head>
+
 
 <body>
 
+
     <div class="container">
 
+
+        <!-- =========================
+             BACK TO HOME
+        ========================= -->
+
         <a href="index.html" class="home-btn">
+
             ← Back to Home
+
         </a>
 
-        <h1 class="main-title">Professional Experience & Projects</h1>
 
-        <h2 class="section-title">Experience</h2>
 
-        <div class="card">
-            <h2>FactSet MESH Externship</h2>
+        <!-- =========================
+             PAGE TITLE
+        ========================= -->
 
-            <p class="duration">
-                May 2026 - Present
-            </p>
+        <h1 class="main-title">
 
-            <ul>
-                <li>Learned Python, Cloud Computing, FastAPI, Databases, and AI technologies.</li>
-                <li>Explored how Artificial Intelligence is used in financial technology solutions.</li>
-                <li>Improved communication, networking, and professional development skills.</li>
-                <li>Participated in collaborative learning sessions and industry interactions.</li>
-            </ul>
+            Professional Experience & Projects
+
+        </h1>
+
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================= -->
+
+        <h2 class="section-title">
+
+            Experience
+
+        </h2>
+
+
+
+        <!-- =========================
+             FACTSET
+        ========================= -->
+
+        <div class="card experience-card">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="experience-content">
+
+                <h2>
+
+                    FactSet MESH Externship
+
+                </h2>
+
+
+                <p class="duration">
+
+                    May 2026 - Present
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        Learned Python, Cloud Computing,
+                        FastAPI, Databases, and AI technologies.
+
+                    </li>
+
+
+                    <li>
+
+                        Explored how Artificial Intelligence
+                        is used in financial technology solutions.
+
+                    </li>
+
+
+                    <li>
+
+                        Improved communication, networking,
+                        and professional development skills.
+
+                    </li>
+
+
+                    <li>
+
+                        Participated in collaborative learning
+                        sessions and industry interactions.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="certificate">
+
+
+                <img src="factset.jpeg" alt="FactSet MESH Externship Certificate">
+
+
+                <br>
+
+
+                <a href="factset.jpeg" target="_blank" class="certificate-btn">
+
+                    View Certificate ↗
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h2>Blockchain Intern - Arthachain</h2>
 
-            <p class="duration">
-                July 2025 - October 2025
-            </p>
 
-            <ul>
-                <li>Learned blockchain fundamentals, Web3 concepts, and smart contracts.</li>
-                <li>Worked on practical blockchain tasks and real-world exercises.</li>
-                <li>Explored decentralized systems and secure record management.</li>
-                <li>Developed a blockchain-based certificate verification project.</li>
-            </ul>
+        <!-- =========================
+             ARTHACHAIN
+        ========================= -->
+
+        <div class="card experience-card">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="experience-content">
+
+
+                <h2>
+
+                    Blockchain Intern - Arthachain
+
+                </h2>
+
+
+                <p class="duration">
+
+                    July 2025 - October 2025
+
+                </p>
+
+
+                <ul>
+
+
+                    <li>
+
+                        Learned blockchain fundamentals,
+                        Web3 concepts, and smart contracts.
+
+                    </li>
+
+
+                    <li>
+
+                        Worked on practical blockchain tasks
+                        and real-world exercises.
+
+                    </li>
+
+
+                    <li>
+
+                        Explored decentralized systems
+                        and secure record management.
+
+                    </li>
+
+
+                    <li>
+
+                        Developed a blockchain-based
+                        certificate verification project.
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="certificate">
+
+
+                <img src="./Screenshot 2026-08-11 154827.png" alt="Arthachain Blockchain Internship Certificate">
+
+
+                <br>
+
+
+                <a href="arthachain.png" target="_blank" class="certificate-btn">
+
+                    View Certificate ↗
+
+                </a>
+
+            </div>
+
         </div>
 
-        <h2 class="section-title">Projects</h2>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <h2 class="section-title">
+
+            Projects
+
+        </h2>
+
+
 
         <div class="project-grid">
 
-            <div class="project-card">
-                <h2>RPD Intelligence</h2>
 
-                <p>
-                    AI-Powered Product Feedback Analysis Platform designed to analyze customer feedback and generate
-                    meaningful business insights.
-                </p>
-
-                <ul>
-                    <li>Built modern UI using React and Vite.</li>
-                    <li>Designed enterprise dashboard with dark theme.</li>
-                    <li>Implemented AI chat interface.</li>
-                    <li>Created analytics and overview panels.</li>
-                    <li>Used Tailwind CSS for reusable UI components.</li>
-                    <li>Focused on scalability and clean architecture.</li>
-                </ul>
-            </div>
+            <!-- =========================
+                 ROOMIES KHATA
+            ========================= -->
 
             <div class="project-card">
-                <h2>WaterCan Delivery Management System</h2>
+
+
+                <h2>
+
+                    Roomies Khata
+
+                </h2>
+
 
                 <p>
-                    Full-stack application for managing water can orders, deliveries, and vendor-customer interactions.
+
+                    A full-stack expense management
+                    application designed for students
+                    and bachelors living together.
+
                 </p>
 
+
                 <ul>
-                    <li>Role-based authentication (User & Owner).</li>
-                    <li>Order placement and management.</li>
-                    <li>Real-time delivery tracking.</li>
-                    <li>Secure JWT authentication.</li>
-                    <li>Built with Next.js, Node.js, PostgreSQL and Prisma.</li>
+
+                    <li>
+
+                        Track shared expenses.
+
+                    </li>
+
+
+                    <li>
+
+                        Split expenses between
+                        room members.
+
+                    </li>
+
+
+                    <li>
+
+                        Settle balances easily.
+
+                    </li>
+
+
+                    <li>
+
+                        User authentication
+                        and room management.
+
+                    </li>
+
                 </ul>
+
+
+                <a href="https://github.com/Rocky-1729/roomieskhata" target="_blank" class="project-btn">
+
+                    View Project ↗
+
+                </a>
+
             </div>
+
+
+
+            <!-- =========================
+                 CAMPUS360 ERP
+            ========================= -->
 
             <div class="project-card">
-                <h2>CertiChain</h2>
+
+
+                <h2>
+
+                    Campus360 ERP
+
+                </h2>
+
 
                 <p>
-                    Blockchain-based certificate verification platform for secure digital certificate storage and
-                    validation.
+
+                    A departmental ERP system designed
+                    to provide faculty and student
+                    management features.
+
                 </p>
 
+
                 <ul>
-                    <li>Developed smart contracts using Solidity.</li>
-                    <li>Implemented tamper-proof certificate verification.</li>
-                    <li>Used IPFS for decentralized storage.</li>
-                    <li>Built frontend using React and Web3 technologies.</li>
-                    <li>Deployed application for public verification.</li>
+
+                    <li>
+
+                        Faculty dashboard.
+
+                    </li>
+
+
+                    <li>
+
+                        Student dashboard.
+
+                    </li>
+
+
+                    <li>
+
+                        Academic information
+                        management.
+
+                    </li>
+
+
+                    <li>
+
+                        Faculty analytics
+                        and management.
+
+                    </li>
+
                 </ul>
+
+
             </div>
+
+
+
+            <!-- =========================
+                 PRODUCTIVITY TRACKER
+            ========================= -->
+
+            <div class="project-card">
+
+
+                <h2>
+
+                    Productivity Tracker Pro
+
+                </h2>
+
+
+                <p>
+
+                    A productivity management
+                    application designed to help users
+                    organize tasks and monitor progress.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        Daily task management.
+
+                    </li>
+
+
+                    <li>
+
+                        Progress tracking.
+
+                    </li>
+
+
+                    <li>
+
+                        Local storage support.
+
+                    </li>
+
+
+                    <li>
+
+                        Modern responsive interface.
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
 
         </div>
 
+
     </div>
+
 
 </body>
 
 </html>
-```
